@@ -42,7 +42,7 @@ resource subnet 'Microsoft.Network/virtualNetworks/subnets@2023-05-01' existing 
 
 // Create public IP address
 resource publicIP 'Microsoft.Network/publicIPAddresses@2023-05-01' = {
-  name: '${vmName}-pip'
+  name: 'pip'
   location: location
   sku: {
     name: 'Standard'
@@ -57,7 +57,7 @@ resource publicIP 'Microsoft.Network/publicIPAddresses@2023-05-01' = {
 
 // Create Network Security Group
 resource nsg 'Microsoft.Network/networkSecurityGroups@2023-05-01' = {
-  name: '${vmName}-nsg'
+  name: 'nsg'
   location: location
   properties: {
     securityRules: [
@@ -80,7 +80,7 @@ resource nsg 'Microsoft.Network/networkSecurityGroups@2023-05-01' = {
 
 // Create Network Interface
 resource nic 'Microsoft.Network/networkInterfaces@2023-05-01' = {
-  name: '${vmName}-nic'
+  name: 'nic'
   location: location
   properties: {
     ipConfigurations: [
@@ -124,6 +124,7 @@ resource vm 'Microsoft.Compute/virtualMachines@2023-07-01' = {
         version: 'latest'
       }
       osDisk: {
+        name: 'osdisk'
         createOption: 'FromImage'
         diskSizeGB: osDiskSizeGB
         managedDisk: {
