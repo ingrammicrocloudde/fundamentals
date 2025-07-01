@@ -2,17 +2,17 @@
 param location string = resourceGroup().location
 
 // Storage Account parameters
-param storageAccountName string = 'storage${uniqueString(resourceGroup().id)}'
+param storageAccountName string = 'storagename'
 param storageAccountSku string = 'Standard_LRS'
 
 // VNet parameters
-param vnetName string = 'vnet-${uniqueString(resourceGroup().id)}'
+param vnetName string = 'vnetname'
 param vnetAddressPrefix string = '10.0.0.0/16'
 param defaultSubnetName string = 'default-subnet'
 param defaultSubnetPrefix string = '10.0.0.0/24'
 
 // VM parameters
-param vmName string = 'winvm${uniqueString(resourceGroup().id)}'
+param vmName string = 'winserver'
 @secure()
 param adminUsername string
 @secure()
