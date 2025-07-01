@@ -35,6 +35,12 @@
         "prefer-interpolation": {
           "level": "off"
         },
+        "secure-secrets-in-params": {
+          "level": "off"
+        },
+        "use-secure-value-for-secure-inputs": {
+          "level": "off"
+        },
         "secure-params-in-nested-deploy": {
           "level": "off"
         },

@@ -42,7 +42,7 @@ resource subnet 'Microsoft.Network/virtualNetworks/subnets@2023-05-01' existing 
 
 // Create public IP address
 resource publicIP 'Microsoft.Network/publicIPAddresses@2023-05-01' = {
-  name: 'pip'
+  name: 'pip${vmName}'
   location: location
   sku: {
     name: 'Standard'
@@ -50,14 +50,14 @@ resource publicIP 'Microsoft.Network/publicIPAddresses@2023-05-01' = {
   properties: {
     publicIPAllocationMethod: 'Static'
     dnsSettings: {
-      domainNameLabel: toLower(vmName)
+      domainNameLabel: toLower('${vmName}-${uniqueString(resourceGroup().id)}')
     }
   }
 }
 
 // Create Network Security Group
 resource nsg 'Microsoft.Network/networkSecurityGroups@2023-05-01' = {
-  name: 'nsg'
+  name: 'nsg${vmName}'
   location: location
   properties: {
     securityRules: [
@@ -80,7 +80,7 @@ resource nsg 'Microsoft.Network/networkSecurityGroups@2023-05-01' = {
 
 // Create Network Interface
 resource nic 'Microsoft.Network/networkInterfaces@2023-05-01' = {
-  name: 'nic'
+  name: 'nic${vmName}'
   location: location
   properties: {
     ipConfigurations: [
