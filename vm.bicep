@@ -6,7 +6,7 @@ param adminUsername string
 param adminPassword string
 
 @description('Name for the Virtual Machine')
-param vmName string = 'winvm${uniqueString(resourceGroup().id)}'
+param vmName string = 'winvm'
 
 @description('Windows OS version')
 param windowsOSVersion string = '2022-datacenter-azure-edition'
