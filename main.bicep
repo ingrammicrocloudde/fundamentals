@@ -2,7 +2,7 @@
 param location string = resourceGroup().location
 
 // Storage Account parameters
-param storageAccountName string = 'storagename'
+param storageAccountName string = 'stgingramicro089'
 param storageAccountSku string = 'Standard_LRS'
 
 // VNet parameters
