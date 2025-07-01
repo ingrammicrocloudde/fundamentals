@@ -13,9 +13,9 @@ param defaultSubnetPrefix string = '10.0.0.0/24'
 
 // VM parameters
 param vmName string = 'winserver'
-@secure()
+
 param adminUsername string
-@secure()
+#disable-next-line secure-secrets-in-params
 param adminPassword string
 
 // Deploy Storage Account

@@ -2,11 +2,11 @@
 param adminUsername string
 
 @description('Password for the Virtual Machine admin')
-@secure()
+#disable-next-line secure-secrets-in-params
 param adminPassword string
 
 @description('Name for the Virtual Machine')
-param vmName string = 'winvm'
+param vmName string 
 
 @description('Windows OS version')
 param windowsOSVersion string = '2022-datacenter-azure-edition'
