@@ -25,6 +25,8 @@ um den Hinweis auf unsichere Passwort Parameter auszublenden, kann außerdem die
 
 Parameter sind in der Datei **main.bicepparam** änderbar. Nach dem Ändern abspeichern und ebenso über "Upload Files" hochladen.
 
+**Wichtig: Die Warnung** *The configuration value of bicep.use_binary_from_path has been set to 'false'* **kann ignoriert werden**. 
+
 Dann die Subscription festlegen:
 
 ```sh
